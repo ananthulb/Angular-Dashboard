@@ -1,0 +1,143 @@
+<div>
+  <mat-card class="example-card">
+    <mat-tab-group animationDuration="0ms">
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <mat-icon class="">edit</mat-icon>
+          <span>Publish</span>
+        </ng-template>
+        <div class="post-input">
+          <!-- <div mat-card-avatar class="example-header-image"></div> -->
+          <img
+            mat-card-avatar
+            src="https://material.angular.io/assets/img/examples/shiba1.jpg"
+            alt="Photo of a Shiba Inu"
+          />
+          <form class="example-form" class="example-full-width">
+            <!-- <mat-form-field class="example-full-width" floatLabel="never"> -->
+            <textarea
+              matInput
+              #message
+              placeholder="Write something about you..."
+              (focus)="isFocussed()"
+            ></textarea>
+            <!-- </mat-form-field> -->
+          </form>
+        </div>
+      </mat-tab>
+      <mat-tab label="Second">
+        <ng-template mat-tab-label>
+          <mat-icon class="">image</mat-icon>
+          <span>Albums</span>
+        </ng-template>
+      </mat-tab>
+      <mat-tab label="Third">
+        <ng-template mat-tab-label>
+          <mat-icon class="">videocam</mat-icon>
+          <span>Video</span>
+        </ng-template>
+      </mat-tab>
+    </mat-tab-group>
+
+    <mat-divider></mat-divider>
+
+    <mat-card-actions>
+      <mat-chip-list aria-label="Fish selection">
+        <mat-chip> <mat-icon class="">camera_alt</mat-icon>Media</mat-chip>
+        <mat-chip
+          ><mat-icon class="">insert_emoticon</mat-icon>Activity</mat-chip
+        >
+        <mat-chip (click)="clickToggle()"
+          ><mat-icon class="">more_horiz</mat-icon></mat-chip
+        >
+      </mat-chip-list>
+    </mat-card-actions>
+    <!-- <mat-card-actions> -->
+    <div *ngIf="advancedpublish == true">
+      <!-- <div class="listt">
+        <mat-checkbox class="example-margin">
+          <div mat-card-avatar class="example-header-image"></div>
+        </mat-checkbox>
+        <p>Activity Feed</p>
+        <mat-chip [matMenuTriggerFor]="menu">
+          <mat-icon class="">insert_emoticon</mat-icon> Friends
+        </mat-chip>
+      </div> -->
+      <div class="post-create-list">
+        <div>
+          <mat-checkbox class="example-margin">
+            <img
+              mat-card-avatar
+              src="https://material.angular.io/assets/img/examples/shiba1.jpg"
+              alt="Photo of a Shiba Inu"
+            />
+            Activity feed
+          </mat-checkbox>
+          <mat-chip [matMenuTriggerFor]="menu">
+            <mat-icon class="">insert_emoticon</mat-icon> Friends
+          </mat-chip>
+        </div>
+        <div>
+          <mat-checkbox class="example-margin">
+            <img
+              mat-card-avatar
+              src="https://material.angular.io/assets/img/examples/shiba1.jpg"
+              alt="Photo of a Shiba Inu"
+            />
+            My Story
+          </mat-checkbox>
+          <mat-chip [matMenuTriggerFor]="menu">
+            <mat-icon class="">insert_emoticon</mat-icon> Friends
+          </mat-chip>
+        </div>
+      </div>
+
+      <mat-divider></mat-divider>
+      <div *ngIf="userlist == true">
+        <div class="userlist-header">
+          <p>Send in message</p>
+          <button mat-stroked-button>
+            <mat-icon class="">search</mat-icon> Create Group
+          </button>
+        </div>
+        <!-- </mat-card-actions> -->
+        <div class="userlist">
+          <mat-checkbox class="example-margin" *ngFor="let friend of friends">
+            <img
+              mat-card-avatar
+              src="{{ friend.image }}"
+              alt="Photo of a Shiba Inu"
+            />
+            {{ friend.name }}
+          </mat-checkbox>
+        </div>
+        <mat-divider></mat-divider>
+      </div>
+
+      <div class="publish-button" fxLayout="row">
+        <button
+          mat-raised-button
+          class="full-width"
+          (click)="showUserList()"
+          *ngIf="userlist == false"
+        >
+          view more
+        </button>
+        <button mat-raised-button color="primary" class="full-width">
+          Publish
+        </button>
+      </div>
+    </div>
+  </mat-card>
+  <mat-menu #menu="matMenu">
+    <mat-list>
+      <mat-list-item *ngFor="let folder of folders">
+        <mat-icon matListIcon>{{ folder.icon }}</mat-icon>
+        <h3 matLine>{{ folder.name }}</h3>
+        <p matLine>
+          <span class="secondary-text-color"> {{ folder.desc }} </span>
+        </p>
+      </mat-list-item>
+    </mat-list>
+  </mat-menu>
+</div>

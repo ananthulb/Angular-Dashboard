@@ -1,0 +1,156 @@
+<mat-card class="example-card" *ngIf="loading == true">
+  <div>
+    <div class="fb-item">
+      <div class="first-section-wrapper">
+        <div class="gravatar">
+          <ngx-skeleton-loader
+            appearance="circle"
+            [theme]="{ width: '80px', height: '80px' }"
+          >
+          </ngx-skeleton-loader>
+        </div>
+        <div class="gravatar-title">
+          <div>
+            <ngx-skeleton-loader
+              [theme]="{
+                width: '200px',
+                'border-radius': '0',
+                height: '15px',
+                'margin-bottom': '10px'
+              }"
+            ></ngx-skeleton-loader>
+          </div>
+          <div>
+            <ngx-skeleton-loader
+              [theme]="{ width: '170px', 'border-radius': '0', height: '15px' }"
+            ></ngx-skeleton-loader>
+          </div>
+        </div>
+      </div>
+      <div class="second-section-wrapper">
+        <div class="wrapper">
+          <ngx-skeleton-loader
+            [theme]="{
+              width: '80%',
+              'border-radius': '0',
+              height: '15px',
+              'margin-bottom': '10px'
+            }"
+          ></ngx-skeleton-loader>
+        </div>
+        <div class="wrapper">
+          <ngx-skeleton-loader
+            [theme]="{
+              width: '90%',
+              'border-radius': '0',
+              height: '15px',
+              'margin-bottom': '10px'
+            }"
+          ></ngx-skeleton-loader>
+        </div>
+        <div class="wrapper">
+          <ngx-skeleton-loader
+            [theme]="{
+              width: '60%',
+              'border-radius': '0',
+              height: '15px',
+              'margin-bottom': '10px'
+            }"
+          ></ngx-skeleton-loader>
+        </div>
+      </div>
+    </div>
+  </div>
+</mat-card>
+<div *ngIf="loading == false">
+  <mat-card class="example-card" *ngFor="let post of streams">
+    <mat-card-header>
+      <img
+        mat-card-avatar
+        src="{{ post.user.image }}"
+        alt="Photo of a Shiba Inu"
+      />
+      <mat-card-title>{{ post.user.name }}</mat-card-title>
+      <mat-card-subtitle>{{
+        post.post.date | timeago: live
+      }}</mat-card-subtitle>
+      <div class="post-header">
+        <mat-icon class="">more_vert</mat-icon>
+      </div>
+    </mat-card-header>
+
+    <mat-card-content>
+      <p>
+        {{ post.post.title }}
+      </p>
+      <!-- https://material.angular.io/assets/img/examples/shiba2.jpg -->
+      <div
+        fxLayout="row"
+        fxLayoutAlign="space-around center"
+        class="img-container"
+      >
+        <div *ngFor="let img of post.post.images">
+          <img
+            mat-card-image
+            class="post-image"
+            src="{{ img.image_url }}"
+            alt="Photo of a Shiba Inu"
+          />
+        </div>
+        <!-- mat-card-image -->
+      </div>
+      <div class="post-buttons">
+        <button
+          color="primary"
+          mat-mini-fab
+          aria-label="Example icon button with a home icon"
+        >
+          <mat-icon>insert_comment</mat-icon>
+        </button>
+        <button
+          color="primary"
+          mat-mini-fab
+          aria-label="Example icon button with a home icon"
+        >
+          <mat-icon>link</mat-icon>
+        </button>
+        <button
+          color="secondary"
+          mat-fab
+          aria-label="Example icon button with a heart icon"
+        >
+          <mat-icon>favorite</mat-icon>
+        </button>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <div class="post-footer">
+        <div>
+          <img
+            *ngFor="let user of post.likes | slice: 0:3"
+            class="img-avatar"
+            src="{{ user.image }}"
+            alt="Photo of a Shiba Inu"
+          />
+          <div>
+            <p *ngFor="let user of post.likes | slice: 0:2">{{ user.name }},</p>
+            <p *ngIf="post.post.like_count > 2">
+              and {{ post.post.like_count - 2 }} more liked this.
+            </p>
+            <p *ngIf="post.post.like_count <= 3">liked this.</p>
+          </div>
+        </div>
+        <div class="post-count">
+          <mat-icon class="">insert_comment</mat-icon>
+          <span>
+            {{ post.post.comment_count }}
+          </span>
+          <mat-icon class="">link</mat-icon
+          ><span>{{ post.post.share_count }}</span>
+          <mat-icon class="">favorite_border</mat-icon
+          ><span>{{ post.post.like_count }}</span>
+        </div>
+      </div>
+    </mat-card-actions>
+  </mat-card>
+</div>

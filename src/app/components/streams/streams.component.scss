@@ -1,0 +1,51 @@
+.post-footer {
+  img:not(:first-child) {
+    margin-left: -12px;
+  }
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  div {
+    display: inline-flex;
+    p {
+      line-height: 40px;
+    }
+  }
+}
+.example-card {
+  margin-bottom: 10px;
+}
+
+.post-image {
+  //   width: 30%;
+  //   height: 30%;
+  width: calc(100% + 0px);
+  margin: 0px;
+  margin-top: 0px !important;
+}
+.post-buttons {
+  position: absolute;
+  right: 15px;
+  bottom: 66px;
+  button {
+    padding-left: 3px;
+    margin-left: 5px;
+  }
+}
+.post-count {
+  span {
+    padding-right: 5px;
+  }
+  mat-icon {
+    padding-right: 5px;
+  }
+}
+.post-header {
+  right: 15px;
+  position: absolute;
+}
+.img-container {
+  div:not(:first-child) {
+    margin-left: 10px;
+  }
+}

@@ -1,0 +1,150 @@
+<mat-toolbar class="toolbar">
+  <img
+    class="logo-image"
+    width="40"
+    alt="Logo"
+    src="../assets/friendkit-bold.svg"
+  />
+  <button
+    [matMenuTriggerFor]="menu"
+    mat-icon-button
+    class="example-icon favorite-icon"
+    aria-label="Example icon-button with heart icon"
+  >
+    <mat-icon>favorite_border</mat-icon>
+  </button>
+  <button
+    [matMenuTriggerFor]="noti"
+    mat-icon-button
+    class="example-icon"
+    aria-label="Example icon-button with share icon"
+  >
+    <mat-icon>notifications_none</mat-icon>
+  </button>
+  <button
+    [matMenuTriggerFor]="message"
+    mat-icon-button
+    class="example-icon favorite-icon"
+    aria-label="Example icon-button with heart icon"
+  >
+    <mat-icon>mail_outline</mat-icon>
+  </button>
+  <button
+    mat-icon-button
+    class="example-icon"
+    aria-label="Example icon-button with share icon"
+  >
+    <mat-icon>chat_bubble_outline</mat-icon>
+  </button>
+  <button
+    mat-icon-button
+    class="example-icon"
+    aria-label="Example icon-button with share icon"
+  >
+    <mat-icon>apps</mat-icon>
+  </button>
+  <span class="example-spacer"></span>
+  <form>
+    <mat-form-field floatLabel="never">
+      <mat-label>Search</mat-label>
+      <input matInput type="text" />
+    </mat-form-field>
+  </form>
+  <button
+    mat-icon-button
+    class="example-icon favorite-icon"
+    aria-label="Example icon-button with heart icon"
+  >
+    <mat-icon>more_vert</mat-icon>
+  </button>
+  <button
+    mat-icon-button
+    class="example-icon"
+    aria-label="Example icon-button with share icon"
+  >
+    <mat-icon>shopping_cart</mat-icon>
+  </button>
+  <img
+    class="img-avatar"
+    src="https://material.angular.io/assets/img/examples/shiba1.jpg"
+    alt="Photo of a Shiba Inu"
+  />
+</mat-toolbar>
+
+<mat-menu #menu="matMenu" class="menu-max">
+  <div class="header-elements">
+    <p>Friend Request</p>
+    <mat-icon>search</mat-icon>
+  </div>
+  <mat-divider></mat-divider>
+  <mat-list>
+    <mat-list-item *ngFor="let message of request">
+      <img matListAvatar src="{{ message.icon }}" alt="Photo of a Shiba Inu" />
+      <h3 matLine>{{ message.name }}</h3>
+      <p matLine>
+        <span> {{ message.desc }} </span>
+      </p>
+      <div *ngIf="message.type == 1">
+        <mat-icon>person_add</mat-icon>
+      </div>
+      <div *ngIf="message.type == 1">
+        <mat-icon>cancel</mat-icon>
+      </div>
+      <div *ngIf="message.type == 2">
+        <mat-icon>loyalty </mat-icon>
+      </div>
+      <mat-divider></mat-divider>
+    </mat-list-item>
+  </mat-list>
+  <div class="allign-centre">
+    <p>view all</p>
+  </div>
+</mat-menu>
+
+<mat-menu #noti="matMenu" class="menu-max">
+  <div class="header-elements">
+    <p>Notifications</p>
+    <mat-icon>notifications_none</mat-icon>
+  </div>
+  <mat-divider></mat-divider>
+  <mat-list>
+    <mat-list-item *ngFor="let message of notification">
+      <img matListAvatar src="{{ message.image }}" alt="Photo of a Shiba Inu" />
+      <h3 matLine>{{ message.name }}</h3>
+      <p matLine>
+        <span> {{ message.desc }} </span>
+      </p>
+      <div>
+        <mat-icon>{{ message.icon }} </mat-icon>
+      </div>
+      <mat-divider></mat-divider>
+    </mat-list-item>
+  </mat-list>
+  <div class="allign-centre">
+    <p>view all</p>
+  </div>
+</mat-menu>
+
+<mat-menu #message="matMenu" class="menu-max">
+  <div class="header-elements">
+    <p>Message</p>
+    <p>Inbox</p>
+  </div>
+  <mat-divider></mat-divider>
+  <mat-list>
+    <mat-list-item *ngFor="let message of messages">
+      <img matListAvatar src="{{ message.icon }}" alt="Photo of a Shiba Inu" />
+      <h3 matLine>{{ message.name }}</h3>
+      <p matLine>
+        <span> {{ message.desc }} </span>
+      </p>
+      <div>
+        <mat-icon>chat_bubble_outline </mat-icon>
+      </div>
+      <mat-divider></mat-divider>
+    </mat-list-item>
+  </mat-list>
+  <div class="allign-centre">
+    <p>view all</p>
+  </div>
+</mat-menu>

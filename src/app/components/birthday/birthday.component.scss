@@ -1,0 +1,29 @@
+.example-card {
+  //max-width: 400px;
+  background-image: url("../../../assets/birthday-bg.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #45d7c4;
+  color: white;
+  width: 295px;
+  min-width: 250px;
+  max-width: 295px;
+}
+.loading-card {
+  color: white;
+  width: 295px;
+  min-width: 250px;
+  max-width: 295px;
+}
+
+.example-header-image {
+  background-image: url("https://material.angular.io/assets/img/examples/shiba1.jpg");
+  background-size: cover;
+}
+
+.birthday-content {
+  text-align: center;
+  justify-content: center;
+  align-items: centers;
+}

@@ -1,0 +1,69 @@
+.example-card {
+  //max-width: 400px;
+  background-image: url("../../../assets/weather-bg.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #5596e6;
+  color: white;
+  width: 295px;
+  min-width: 250px;
+  max-width: 295px;
+}
+.loading-card {
+  //background-image: url("../../../assets/weather-bg.svg");
+  // background-size: cover;
+  // background-repeat: no-repeat;
+  // background-position: center;
+  // background-color: #5596e6;
+  color: white;
+  width: 295px;
+  min-width: 250px;
+  max-width: 295px;
+}
+.weather-content {
+  text-align: center;
+  h1 {
+    font-size: 40px;
+  }
+  h3 {
+    font-size: 15px;
+  }
+  mat-icon {
+    font-size: 60px;
+    margin-right: 35px;
+  }
+  p {
+    font-size: 15px;
+    padding: 3px;
+  }
+  div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 3px;
+    mat-icon {
+      font-size: 20px;
+      margin-right: 0px;
+    }
+  }
+}
+
+.weather-report {
+  display: flex;
+  justify-content: center;
+  div {
+    background-color: rgba(255, 255, 255, 0.2);
+    flex-direction: column;
+    justify-content: center;
+    padding: 3px;
+    p {
+      font-size: 10px;
+      padding: 3px;
+    }
+    mat-icon {
+      font-size: 15px;
+      margin-right: 0px;
+    }
+  }
+}

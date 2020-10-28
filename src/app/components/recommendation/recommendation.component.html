@@ -1,0 +1,56 @@
+<mat-card class="example-card">
+  <div class="header-elements">
+    <p>Recommended Pages</p>
+    <button
+      [matMenuTriggerFor]="menu"
+      mat-icon-button
+      class="example-icon favorite-icon"
+      aria-label="Example icon-button with heart icon"
+    >
+      <mat-icon>more_vert</mat-icon>
+    </button>
+  </div>
+  <mat-divider *ngIf="loading == false"></mat-divider>
+  <div class="item" *ngIf="loading == true">
+    <ngx-skeleton-loader
+      count="4"
+      animation="progress"
+      [theme]="{
+        height: '50px'
+      }"
+    ></ngx-skeleton-loader>
+  </div>
+  <mat-list *ngIf="loading == false">
+    <mat-list-item *ngFor="let message of messages">
+      <img matListAvatar src="{{ message.image }}" alt="Photo of a Shiba Inu" />
+      <h3 matLine>{{ message.name }}</h3>
+      <p matLine>
+        <span class="secondary-text-color"> {{ message.desc }} </span>
+      </p>
+      <mat-icon class="">bookmark_border</mat-icon>
+      <mat-divider></mat-divider>
+    </mat-list-item>
+  </mat-list>
+</mat-card>
+
+<mat-menu #menu="matMenu" class="menu-max">
+  <mat-list>
+    <mat-list-item *ngFor="let message of options">
+      <mat-icon matListIcon>{{ message.icon }}</mat-icon>
+      <h3 matLine>{{ message.name }}</h3>
+      <p matLine>
+        <span class="secondary-text-color"> {{ message.desc }} </span>
+      </p>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item>
+      <mat-icon matListIcon>delete</mat-icon>
+      <h3 matLine>Remove</h3>
+      <p matLine>
+        <span class="secondary-text-color">
+          Remove this widget from your feed.
+        </span>
+      </p>
+    </mat-list-item>
+  </mat-list>
+</mat-menu>

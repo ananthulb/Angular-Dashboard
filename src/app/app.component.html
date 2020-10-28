@@ -1,0 +1,122 @@
+<!-- <div fxLayout="column" fxLayoutGap="80px"> -->
+<!-- Toolbar -->
+<!-- <app-toolbar></app-toolbar> -->
+<!-- <div class="check">
+  <div fxLayout="row" fxLayoutGap="32px">
+    <div fxLayoutGap="32px">
+      <app-weather></app-weather>
+      <app-recommendation></app-recommendation>
+      <app-ads></app-ads>
+      <app-activity></app-activity>
+    </div>
+
+    <div fxLayout="column" fxLayoutGap="32px">
+      <app-create-post></app-create-post>
+      <app-streams></app-streams>
+    </div>
+
+    <div fxLayout="column" fxLayoutGap="32px">
+      <app-stories></app-stories>
+      <app-birthday></app-birthday>
+      <app-suggestions></app-suggestions>
+      <app-jobs></app-jobs>
+    </div>
+  </div>
+</div> -->
+<!-- <div>
+  <div>7</div>
+  <div fxLayout="row" class="check">
+    <div>
+      <div>1</div>
+      <div>1</div>
+      <div>1</div>
+    </div>
+    <div>
+      <div>2</div>
+      <div>2</div>
+    </div>
+    <div>
+      <div>3</div>
+      <div>3</div>
+      <div>3</div>
+    </div>
+  </div>
+</div> -->
+
+<div
+  fxLayout.gt-md="column"
+  fxLayout.lt-sm="column"
+  fxLayoutGap="80px"
+  fxFlex="100"
+  fxFlex.gt-md="100"
+>
+  <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="10px">
+    <app-toolbar></app-toolbar>
+  </div>
+  <div
+    fxLayout="row"
+    fxLayout.lt-md="column"
+    fxLayoutGap="10px"
+    class="content"
+  >
+    <div
+      fxLayout.gt-md="column"
+      fxLayout.lt-sm="column"
+      fxLayoutGap="10px"
+      fxFlex="100"
+      fxFlex.gt-md="100"
+      class="left-panel"
+    >
+      <div fxFlex.lt-md="50" fxFlex.lt-sm="100">
+        <app-weather></app-weather>
+      </div>
+      <div fxFlex.lt-md="50" fxFlex.lt-sm="100">
+        <app-recommendation></app-recommendation>
+      </div>
+      <div fxFlex.lt-md="50" fxFlex.lt-sm="100">
+        <app-ads></app-ads>
+      </div>
+      <div fxFlex.lt-md="50" fxFlex.lt-sm="100">
+        <app-activity></app-activity>
+      </div>
+    </div>
+    <div
+      fxLayout.gt-md="column"
+      fxLayout.lt-sm="column"
+      fxLayoutGap="10px"
+      fxFlex="100"
+      fxFlex.gt-md="100"
+      class="center-panel"
+    >
+      <div fxFlex.lt-md="50" fxFlex.lt-sm="100">
+        <app-create-post></app-create-post>
+      </div>
+      <div fxFlex.lt-md="50" fxFlex.lt-sm="100">
+        <app-streams></app-streams>
+      </div>
+    </div>
+    <div
+      fxLayout.gt-md="column"
+      fxLayout.lt-sm="column"
+      fxLayoutGap="10px"
+      fxFlex="100"
+      fxFlex.gt-md="100"
+      class="right-panel"
+    >
+      <div fxFlex.lt-md="50" fxFlex.lt-sm="100">
+        <app-stories></app-stories>
+      </div>
+      <div fxFlex.lt-md="50" fxFlex.lt-sm="100">
+        <app-birthday></app-birthday>
+      </div>
+      <div fxFlex.lt-md="50" fxFlex.lt-sm="100">
+        <app-suggestions></app-suggestions>
+      </div>
+      <div fxFlex.lt-md="50" fxFlex.lt-sm="100">
+        <app-jobs></app-jobs>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <router-outlet></router-outlet> -->

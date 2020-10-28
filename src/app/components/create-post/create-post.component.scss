@@ -1,0 +1,60 @@
+.example-card {
+  //max-width: 400px;
+}
+
+.example-header-image {
+  background-image: url("../../../assets/Profile_avatar_placeholder_large.png");
+  background-size: cover;
+}
+.example-form {
+  min-width: 150px;
+  max-width: 100%;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+  height: 150px;
+  textarea {
+    height: 100px;
+    border-color: none;
+  }
+}
+.post-input {
+  display: flex;
+  padding-top: 20px;
+  form {
+    padding-left: 20px;
+  }
+}
+
+.post-create-list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: space-between;
+  div {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+.userlist-header {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  padding-top: 5px;
+  div {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+.userlist {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.publish-button {
+  // display: flex;
+  padding-top: 10px;
+}

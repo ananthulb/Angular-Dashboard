@@ -1,0 +1,58 @@
+<mat-card class="loading-card" *ngIf="loading == true">
+  <div class="item">
+    <ngx-skeleton-loader count="4" animation="progress"></ngx-skeleton-loader>
+  </div>
+</mat-card>
+
+<mat-card class="example-card" *ngIf="loading == false">
+  <div class="header-elements">
+    <!-- <div mat-card-avatar class="example-header-image"></div> -->
+    <!-- <mat-card-title>Shiba Inu</mat-card-title> -->
+    <!-- <mat-card-subtitle>Dog Breed</mat-card-subtitle> -->
+    <mat-icon class="">work_outline</mat-icon>
+    <button
+      [matMenuTriggerFor]="menu"
+      mat-icon-button
+      class="example-icon favorite-icon"
+      aria-label="Example icon-button with heart icon"
+    >
+      <mat-icon>more_vert</mat-icon>
+    </button>
+  </div>
+  <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
+  <mat-card-content class="job-content">
+    <img
+      class="img-avatar"
+      src="https://material.angular.io/assets/img/examples/shiba1.jpg"
+      alt="Photo of a Shiba Inu"
+    />
+
+    <p>Nelly has a new job!</p>
+    <p>Send her message congratulating her for getting this job.</p>
+    <div>
+      <button mat-stroked-button>Write Message</button>
+    </div>
+  </mat-card-content>
+</mat-card>
+
+<mat-menu #menu="matMenu" class="menu-max">
+  <mat-list>
+    <mat-list-item *ngFor="let message of options">
+      <mat-icon matListIcon>{{ message.icon }}</mat-icon>
+      <h3 matLine>{{ message.name }}</h3>
+      <p matLine>
+        <span class="secondary-text-color"> {{ message.desc }} </span>
+      </p>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item>
+      <mat-icon matListIcon>delete</mat-icon>
+      <h3 matLine>Remove</h3>
+      <p matLine>
+        <span class="secondary-text-color">
+          Remove this widget from your feed.
+        </span>
+      </p>
+    </mat-list-item>
+  </mat-list>
+</mat-menu>

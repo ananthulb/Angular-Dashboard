@@ -1,0 +1,61 @@
+<mat-card class="loading-card" *ngIf="loading == true">
+  <div class="item">
+    <ngx-skeleton-loader count="4" animation="progress"></ngx-skeleton-loader>
+  </div>
+</mat-card>
+<mat-card class="example-card" *ngIf="loading == false">
+  <mat-card-header class="header-elements">
+    <button
+      [matMenuTriggerFor]="menu"
+      mat-icon-button
+      class="example-icon favorite-icon"
+      aria-label="Example icon-button with heart icon"
+    >
+      <mat-icon>more_vert</mat-icon>
+    </button>
+  </mat-card-header>
+  <mat-card-content class="weather-content">
+    <h1>71 &#7506;</h1>
+    <mat-icon class="">wb_sunny</mat-icon>
+    <h3>Sunny</h3>
+    <div>
+      <p>Real Feel: 78&#7506;</p>
+      <p>Rain Chance: 5%</p>
+    </div>
+    <div class="weather-report">
+      <div *ngFor="let day of weather">
+        <p>{{ day.day }}</p>
+        <mat-icon class="">{{ day.icon }}</mat-icon>
+        <p>{{ day.desc }}&#7506;</p>
+      </div>
+    </div>
+    <h3>Sunday, 18th 2018</h3>
+    <div>
+      <mat-icon class="">location_on</mat-icon>
+      <p>Los Angeles, CA</p>
+    </div>
+  </mat-card-content>
+  <mat-card-actions> </mat-card-actions>
+</mat-card>
+
+<mat-menu #menu="matMenu" class="menu-max">
+  <mat-list>
+    <mat-list-item *ngFor="let message of options">
+      <mat-icon matListIcon>{{ message.icon }}</mat-icon>
+      <h3 matLine>{{ message.name }}</h3>
+      <p matLine>
+        <span class="secondary-text-color"> {{ message.desc }} </span>
+      </p>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item>
+      <mat-icon matListIcon>delete</mat-icon>
+      <h3 matLine>Remove</h3>
+      <p matLine>
+        <span class="secondary-text-color">
+          Remove this widget from your feed.
+        </span>
+      </p>
+    </mat-list-item>
+  </mat-list>
+</mat-menu>
