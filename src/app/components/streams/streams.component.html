@@ -75,7 +75,14 @@
         post.post.date | timeago: live
       }}</mat-card-subtitle>
       <div class="post-header">
-        <mat-icon class="">more_vert</mat-icon>
+        <button
+          [matMenuTriggerFor]="options"
+          mat-icon-button
+          class="example-icon favorite-icon"
+          aria-label="Example icon-button with heart icon"
+        >
+          <mat-icon>more_vert</mat-icon>
+        </button>
       </div>
     </mat-card-header>
 
@@ -154,3 +161,25 @@
     </mat-card-actions>
   </mat-card>
 </div>
+
+<mat-menu #options="matMenu" class="menu-max">
+  <mat-list>
+    <mat-list-item *ngFor="let option of sideoptions">
+      <mat-icon matListIcon>{{ option.icon }}</mat-icon>
+      <h3 matLine>{{ option.name }}</h3>
+      <p matLine>
+        <span class="secondary-text-color"> {{ option.desc }} </span>
+      </p>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item>
+      <mat-icon matListIcon>outlined_flag</mat-icon>
+      <h3 matLine>Flag</h3>
+      <p matLine>
+        <span class="secondary-text-color">
+          In case of inappropriate content.
+        </span>
+      </p>
+    </mat-list-item>
+  </mat-list>
+</mat-menu>

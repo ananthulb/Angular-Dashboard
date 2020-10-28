@@ -7,6 +7,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StreamsComponent implements OnInit {
   loading = true;
+  sideoptions = [
+    {
+      name: 'Bookmark',
+      desc: 'Add this post to the bookmark.',
+      image: '/assets/avatars/james.jpg',
+      icon: 'bookmark_border',
+      type: 1,
+    },
+    {
+      name: 'Notify Me',
+      desc: 'Send me the updates.',
+      image: '/assets/avatars/jane.jpg',
+      icon: 'alarm_on',
+      type: 2,
+    },
+  ];
   constructor() {}
 
   ngOnInit(): void {
